@@ -44,6 +44,7 @@ class Order(models.Model):
         self.complete = True
         self.save()
 
+    @property
     def get_duration(self):
         if self.complete:
             return (self.time_out - self.time_in).total_seconds() // 60
